@@ -23,9 +23,9 @@
 #
 import sys
 import socket
-import xmlrpclib
+import xmlrpc.client
 import autoconnect
-from SimpleXMLRPCServer import SimpleXMLRPCServer
+from xmlrpc.server import SimpleXMLRPCServer
 
 
 class Person:
@@ -56,7 +56,7 @@ class Server:
         self.broadcaster = autoconnect.beacon("http://localhost:8000")
         try:
             self.server.serve_forever()
-        except KeyboardInterrupt,e:
+        except KeyboardInterrupt as e:
             pass
             self.server.server_close()
 
