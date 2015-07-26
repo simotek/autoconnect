@@ -66,11 +66,13 @@ class UdpReceiver:
             client_socket.settimeout(float(timeout))
 
         try:
+            print ("try and recieve")
             data, addr = client_socket.recvfrom(self.receiveBlockSize)
         finally:
             client_socket.close()
 
-        return data, addr
+        print ("recieve")
+        return data.decode('utf-8'), addr
 
 
 class WatchError(Exception):
@@ -115,7 +117,8 @@ def watch(port_range=util.AUTOCONNECT_RANGE, timeout=60, retries=20):
         retries = 20
 
     while True:
-        port = random.choice(port_range)
+        #port = random.choice(port_range)
+        port = 8511
         if util.is_free(port):
             break
         else:
@@ -136,7 +139,7 @@ def watch(port_range=util.AUTOCONNECT_RANGE, timeout=60, retries=20):
 
     while retries:
         try:
-            #print ("watching on port %d..." % port)
+            print ("watching on port %d..." % port)
             uri, addr = r.receive(port, timeout=60)
             break
 

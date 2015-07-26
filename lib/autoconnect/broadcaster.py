@@ -64,15 +64,15 @@ class UdpBroadcaster:
         # Allow the socket to broadcast, set the socket options.
         server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
-#        print ("Running")
+        print ("Running")
 
         # Loop broadcasting until we're told to exit.
         while not self.__exitLock.isSet():
             # Send to all the ports in the list.
             for port in port_list:
                 # Send the infomation.
-#                print ("Broadcast: ", (self.__broadcastAddress, port))
-                server_socket.sendto(information, (self.__broadcastAddress, port))
+                print ("Broadcast: ", (self.__broadcastAddress, port))
+                server_socket.sendto(information.encode('utf-8'), (self.__broadcastAddress, port))
             # Sleep before broadcasting again.
             time.sleep(self.__broadcastPeriod)
 
