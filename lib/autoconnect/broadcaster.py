@@ -22,11 +22,11 @@ Suite 330, Boston, MA 02111-1307 USA.
 
 """
 import time
-import thread
+import _thread
 import socket
 import threading
 
-import util
+from . import util
 
 
 class UdpBroadcaster:
@@ -88,7 +88,7 @@ class UdpBroadcaster:
         This function will return if the thread is already running.
         """
         if self.threadRunning == 0:
-            thread.start_new_thread(self.__broadcaster, (information, port_list))
+            _thread.start_new_thread(self.__broadcaster, (information, port_list))
             self.threadRunning = 1
 
 
