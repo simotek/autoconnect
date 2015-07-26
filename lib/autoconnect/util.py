@@ -107,7 +107,7 @@ def is_free(test_port):
         client_socket.bind(('', test_port))
         client_socket.close()
 
-    except socket.error, e:
+    except socket.error as e:
         returned = False
 
     return returned

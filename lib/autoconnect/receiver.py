@@ -140,7 +140,7 @@ def watch(port_range=util.AUTOCONNECT_RANGE, timeout=60, retries=20):
             uri, addr = r.receive(port, timeout=60)
             break
 
-        except socket.error, e:
+        except socket.error as e:
             uri = None
             if current_retries:
                 # on decrement when currnt retries is not zero
