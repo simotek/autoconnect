@@ -21,7 +21,7 @@
 #
 #   Date: 2001/12/06 17:23:28
 #
-import xmlrpclib
+import xmlrpc.client
 
 import autoconnect
 
@@ -37,7 +37,7 @@ def main():
 
     print ("Calling greet: ", s.greet())
 
-    print ('Done, exiting now.')      
+    print ('Done, exiting now.')
 
 
 if __name__ == '__main__':
