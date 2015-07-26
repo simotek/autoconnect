@@ -47,16 +47,16 @@ from . import example
 from . import receiver
 from . import broadcaster
 
-from receiver import watch
-from receiver import UdpReceiver
-from broadcaster import beacon
-from broadcaster import UdpBroadcaster
-from util import is_free
-from util import random_ports
-from util import FreePortError
-from util import get_free_port
-from util import AUTOCONNECT_RANGE
+from .receiver import watch
+from .receiver import UdpReceiver
+from .broadcaster import beacon
+from .broadcaster import UdpBroadcaster
+from .util import is_free
+from .util import random_ports
+from .util import FreePortError
+from .util import get_free_port
+from .util import AUTOCONNECT_RANGE
 
 
 # Typo which refers to beacon. Will be removed in future.
-from broadcaster import beckon
+from .broadcaster import beckon
