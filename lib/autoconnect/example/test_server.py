@@ -29,8 +29,8 @@ from SimpleXMLRPCServer import SimpleXMLRPCServer
 
 
 class Person:
-    
-    def greet(self, name=''): 
+
+    def greet(self, name=''):
         msg = "Hello, nice to meet you"
         if name:
             msg = "%s %s" % (msg, name)
@@ -39,7 +39,7 @@ class Person:
 
 class Server:
     """This server runs a simple XML-RPC server and its clients
-    automatically find it. Its magic ;)     
+    automatically find it. Its magic ;)
     """
     def __init__(self):
         self.server = None
@@ -47,13 +47,13 @@ class Server:
 
 
     def main(self):
-        print "Starting XML-RPC server http://localhost:8000"
+        print ("Starting XML-RPC server http://localhost:8000")
         self.server = SimpleXMLRPCServer(("localhost", 8000))
         self.server.register_instance(Person())
 
         # Start the beckon to tell clients the servers XML-RPC URI:
-        print "Homing beacon running. Press Ctrl-C to exit."
-        self.broadcaster = autoconnect.beacon("http://localhost:8000")        
+        print ("Homing beacon running. Press Ctrl-C to exit.")
+        self.broadcaster = autoconnect.beacon("http://localhost:8000")
         try:
             self.server.serve_forever()
         except KeyboardInterrupt,e:
@@ -65,4 +65,4 @@ class Server:
 
 if __name__  == '__main__':
     server = Server()
-    server.main()   
+    server.main()
