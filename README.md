@@ -1,9 +1,10 @@
 # autoconnect
 Automatically exported from code.google.com/p/autoconnect
+
 https://pypi.python.org/pypi/autoconnect/0.9.3
 
-Author: Oisin Mulvihill
-License: LGPL 
+**Author:** Oisin Mulvihill
+**License:** LGPL 
 
 # The Auto Connect Project
 ## Introduction
